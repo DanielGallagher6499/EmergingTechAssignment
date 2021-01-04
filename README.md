@@ -1,4 +1,4 @@
-# EmergingTechAssignment
+# EmergingTechAssignment - 50%
 #### Author - Daniel Gallagher 
 #### Student number - G00360986
 #### Email Address - G00360986@gmit.ie
