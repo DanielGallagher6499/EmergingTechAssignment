@@ -1,0 +1,104 @@
+<html lang="en">
+    <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8" />
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      />
+
+      <link
+        rel="stylesheet"
+        href="./style.css"
+      />
+
+      <!--Background Image-->
+      <style>
+        body{
+          background-image: url("https://external-preview.redd.it/DpP49cuDMgbeQ5ANgnbwgQnHlXkj5lK939c1McwXxnM.jpg?auto=webp&s=be00c2a7bdc4c5739fe826df89059491eb9bd842");
+          background-repeat: no-repeat;
+          background-size: 100%;
+        }
+      </style>
+      
+      <!--Title-->
+    <title>Turbine Predictor | G00360986</title>
+    </head>
+    <body>
+    </div>
+    
+    <div class="container" style="text-align:center">
+      <div class="row">
+        <div class="col-sm">
+        </div>
+      </div>
+    
+      <!--Headers-->
+    </div>
+    <h1 style="text-align: center"><u>Daniel Gallagher | G00360986</u></h1>
+      <h1 style="text-align: center"><u>Wind Turbine Predictor</u></h1>
+      <h1 style="text-align: center;"><u>Please enter a wind speed value below</u></h1>
+      <div class="container" style="text-align:center">
+        <div class="row">
+          <div class="col-sm">
+            <input
+              class="form-control"
+              id="input"
+              type="text"
+              style="width:250px; height:50px; font-size: larger;"
+              placeholder="Enter the wind speed..."
+            />
+          </div>
+        </div>
+        
+        <!--Button-->
+        <div class="row">
+          <div class="col-sm">
+            <button
+              type="button"
+              style="width:250px; height:30px; font-size: larger;"
+              class="btn btn-success btn-md btn-block"
+              id="predict-button"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+        
+        <h1 id="prediction"></h1>
+      </div>
+      
+      <!--Script-->
+      <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+    
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
+
+<!--Input Script-->
+<!--Predict Script-->
+<script>
+    $("#predict-button").click(() => {
+      value = jQuery("#input").val();
+      formData = {value:value};
+      value = jQuery("#input").val();
+      
+      $.ajax("/predict", {
+        type: "POST", // http method
+        data: formData , // data to submit
+        success: function (data, status, xhr) {
+          var result = data[['response']]
+          $("#prediction").text(`Predicted Result: ${result}`);
+        },
+        error: function (jqXhr, textStatus, errorMessage) {
+          $("#prediction").append("Error" + errorMessage);
+        },
+      });
+    });
+  </script>
