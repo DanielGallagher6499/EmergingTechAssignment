@@ -32,7 +32,7 @@ In this section the way in which the web application is run from the command lin
 
 - Step 1 : Open a command window in the project directory.
 
-- Step 2 : Use this command "set FLASK_APP=webapp.py".
+- Step 2 : Use this command "set FLASK_APP=web-service.py".
 
 - Step 3 : Run this command next "python -m flask run".
 
