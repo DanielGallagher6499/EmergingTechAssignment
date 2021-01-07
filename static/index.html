@@ -21,7 +21,7 @@
         }
       </style>
       
-      <!--Title-->
+      <!--Page Title-->
     <title>Turbine Predictor | G00360986</title>
     </head>
     <body>
@@ -33,7 +33,7 @@
         </div>
       </div>
     
-      <!--Headers-->
+      <!--Top Page Headers-->
     </div>
     <h1 style="text-align: center"><u>Daniel Gallagher | G00360986</u></h1>
       <h1 style="text-align: center"><u>Wind Turbine Predictor</u></h1>
@@ -51,16 +51,16 @@
           </div>
         </div>
         
-        <!--Button-->
+        <!--Submit Button-->
         <div class="row">
           <div class="col-sm">
             <button
               type="button"
               style="width:250px; height:30px; font-size: larger;"
               class="btn btn-success btn-md btn-block"
-              id="predict-button"
+              id="submit-button"
             >
-              Submit
+              Submit Value
             </button>
           </div>
         </div>
@@ -81,10 +81,9 @@
       crossorigin="anonymous"
     ></script>
 
-<!--Input Script-->
-<!--Predict Script-->
+<!--Scripts used for inputs and predictions-->
 <script>
-    $("#predict-button").click(() => {
+    $("#submit-button").click(() => {
       value = jQuery("#input").val();
       formData = {value:value};
       value = jQuery("#input").val();
